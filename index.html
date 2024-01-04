@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>census web app_user</title>
+
+</head>
+
+
+<body>
+  <div class="form-container"></div>
+    <p><h1>COUNTRY CENSUS FORM</h1></p>
+    <p>Enter Your Age</p>
+    <input id="age" type="number">
+
+    <button onclick="checkAge()">Ok</button>
+
+
+    <script>
+        function checkAge() {
+          var age = document.getElementById("age").value;
+          if (age >= 21) {
+            window.location.href = "register.html"; // Link to the first page
+          } else {
+            window.location.href = "sorry.html"; // Link to the second page
+          }
+        }
+        </script>
+</body>
+
+</html>

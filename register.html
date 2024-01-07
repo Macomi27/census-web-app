@@ -10,7 +10,7 @@
 
     <p><h1>COUNTRY CENSUS FORM</h1></p>
 
-        <form id="form1" class="originalForm">
+        <form id="myForm">
             <label for="name" >Name:</label>
             <input type="text" id="name" name="name" required ><br><br>
 
@@ -38,14 +38,34 @@
             <label for="reg">Region: </label>
             <input type="text" id="reg" name="region" required><br><br>
 
-            <button type="submit" onclick="goto()">Register</button>
+            <input type="submit" value="Register">
 
         </form>  
 
    <script>
-    function goto(){
-        window.location.href = "close.html";
+    document.getElementById('myForm').addEventListener('submit',
+    function(event) {
+        event.preventDefault(); //prevent the form from submitting
+
+        var name = document.getElementById('name').value;
+        var addr = document.getElementById('addr').value;
+        var dob = document.getElementById('dob').value;
+        var pob = document.getElementById('pob').value;
+        var census1 = document.getElementById('census1').value;
+        var male = document.getElementById('male').value;
+        var female = document.getElementById('female').value;
+        var census2 = document.getElementById('census2').value;
+
+        if(name === '' || addr === '' || dob === '' || pob === '' || census1 === '' || male === '' || female === '' || census2 === '') {
+            
+            alert('Please fill out all fields.');
+        } else {
+            alert('Form submitted successfully!');
+            window.location.href = "close.html";
+        }
     }
+    )
+
    </script>
 
 </body>
